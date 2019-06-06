@@ -1,0 +1,19 @@
+#divDeCima {
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  height: 300px;
+  background-color: white;
+  z-index: 1;
+}
+#divDeCima img {
+  max-width: 300px;
+}
+
+#divDeBaixo {
+  padding-top: 300px;
+}
+
+#divDeBaixo h1 {
+  text-align: center;
+}
