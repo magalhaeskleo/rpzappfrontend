@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { CardHeader, List, Card, ListItem } from "@material-ui/core";
 import Avatar from "@material-ui/core/Avatar";
-
+import Lista from "../NomeLista";
 import DialogComp from "../card/dialog";
 
 const useStyles = {
@@ -16,6 +16,7 @@ class Agenda extends Component {
     open: false,
     backgroundColor: "",
   };
+
   converte = letras => {
     const code = Buffer.from(letras, "utf8");
     const color = code[0] + code[1] + code[2];
@@ -41,8 +42,13 @@ class Agenda extends Component {
                     {x.evento[0].toUpperCase()}
                   </Avatar>
                 }
-                action={<DialogComp pedidosPorId={this.props.agendaDatas.filter(y => y._id === x._id)} />}
-                title={x.evento + " " + " " + x.data}
+                action={
+                  <div style={{ display: "flex" }}>
+                    <Lista pedidosPorId={this.props.agendaDatas.filter(y => y._id === x._id)} />
+                    <DialogComp pedidosPorId={this.props.agendaDatas.filter(y => y._id === x._id)} />
+                  </div>
+                }
+                title={`${x.evento} ${x.data} `}
                 subheader={x.local + " a partir das " + x.horario}
               />
             </Card>

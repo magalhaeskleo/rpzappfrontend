@@ -3,7 +3,6 @@ import Agenda from "../card";
 import "./main.css";
 import logo from "../../img/corte2.png";
 import api from "../../service/api";
-import axios from "axios";
 
 class Main extends Component {
   state = {
@@ -16,7 +15,6 @@ class Main extends Component {
   }
 
   buscarAgenda = async () => {
-    debugger;
     const rest = await api.get("/dataEvento");
     if (rest.data.length > 0) {
       this.setState({ agendaDatas: rest.data });
@@ -28,7 +26,7 @@ class Main extends Component {
       <div style={{ position: "relative" }}>
         <header id="divDeCima">
           <div>
-            <img id="idImagem" src={logo} />
+            <img id="idImagem" alt="" src={logo} />
             <h1>Agenda</h1>
           </div>
         </header>
