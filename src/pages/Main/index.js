@@ -15,10 +15,9 @@ class Main extends Component {
   }
 
   buscarAgenda = async () => {
-    const rest = await api.get("/dataEvento");
+    const rest = await api.get("/dataEventoAll");
     if (rest.data.length > 0) {
       this.setState({ agendaDatas: rest.data });
-      this.setState({ pedidosPorId: rest.data[0].pedidos });
     }
   };
   render() {
