@@ -71,7 +71,7 @@ class dialog extends Component {
     };
 
     await api.post(`/dataEvento/${this.props.pedidosPorId[0]._id}/pedidos`, newPedidoDeMusica);
-    api.post(`/dataEvento/${this.props.pedidosPorId[0]._id}/emailSendPedidos`);
+    api.get(`/dataEvento/${this.props.pedidosPorId[0]._id}/emailSendPedidos`);
 
     document.getElementById("musica").value = null;
     this.handleOpenSnackbar("Pedido inserido com sucesso");

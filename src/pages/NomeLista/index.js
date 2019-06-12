@@ -63,7 +63,7 @@ class Lista extends Component {
     };
 
     await api.post(`/dataEvento/${this.props.pedidosPorId[0]._id}/nomeLista`, newNomeLista);
-    api.post(`/dataEvento/${this.props.pedidosPorId[0]._id}/emailSendNomeLista`);
+    api.get(`/dataEvento/${this.props.pedidosPorId[0]._id}/emailSendNomeLista`);
 
     this.handleOpenSnackbar("Seu nome foi inserido com sucesso");
 
